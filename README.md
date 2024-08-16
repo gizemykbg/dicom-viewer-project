@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# DICOM Viewer Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Localization](#localization)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The **DICOM Viewer Project** is a React-based web application that allows users to view and interact with DICOM (Digital Imaging and Communications in Medicine) files. This application leverages the CornerstoneJS library to render medical images and offers tools like ROI (Region of Interest) selection for detailed image analysis.
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **DICOM Image Rendering**: Load and display DICOM images in the browser.
+- **Tool Support**: Includes tools like Rectangle ROI, Pan, and Zoom for detailed image analysis.
+- **Patient Management**: View and manage a list of patients with associated DICOM images.
+- **Localization**: Supports multiple languages, including English and Turkish.
+- **Responsive Design**: Works across various screen sizes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before you begin, ensure you have met the following requirements:
 
-### `yarn build`
+- **Node.js**: Install Node.js version 14 or higher.
+- **npm**: Ensure npm is installed (comes with Node.js).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/dicom-viewer-project.git
+   cd dicom-viewer-project
+2. Installing Dependencies
+   ```bash
+   yarn install
+   npm install
+## Running the Application
+1. Start the development server:
+   ```bash
+    npm start
+    yarn start
+2.	Access the application:
+  Open your browser and navigate to http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Project Structure
+The project is structured as follows:
 
-### `yarn eject`
+    dicom-viewer-project/
+    ├── public/
+    │   ├── assets/
+    │   │   └── mockData/        # JSON files with mock patient data
+    │   ├── locales/             # Localization files for different languages
+    │   └── index.html
+    ├── src/
+    │   ├── components/
+    │   │   ├── common/          # Shared components like LanguageSelector
+    │   │   ├── patient/         # Components related to patient management
+    │   │   └── viewer/          # DICOM Viewer components
+    │   ├── slices/              # Redux slices for managing state
+    │   ├── pages/               # Page components for different views
+    │   ├── i18n.js              # Localization configuration
+    │   ├── App.js               # Main application component
+    │   ├── store.js             # Redux store configuration
+    │   └── index.js             # Application entry point
+    ├── package.json
+    └── README.md
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Localization
+This project supports multiple languages. The translations are managed using react-i18next. The supported languages are:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  •	English (default)
+  •	Turkish
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Adding a New Language
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To add a new language:
 
-## Learn More
+1.	Create a new JSON file under public/locales/<lang-code>/translation.json.
+2.	Update the i18n configuration in src/i18n.js to include the new language.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Viewing a Patient’s DICOM Image
 
-### Code Splitting
+1.	On the home page, you’ll see a list of patients.
+2.	Click the View DICOM button next to a patient to open their DICOM image.
+3.	Use the tools provided (e.g., Rectangle ROI, Pan, Zoom) to analyze the image.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Managing Patients
 
-### Analyzing the Bundle Size
+Patients are loaded from a mock data file (public/assets/mockData/patients.js). You can edit this file to add or remove patients.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Troubleshooting
 
-### Making a Progressive Web App
+Common Issues
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+•	Tools Not Working: Ensure that the tools are correctly initialized in the DicomViewer.js component.
+•	DICOM File Not Loading: Verify that the file paths in the patient mock data point to valid DICOM files in the public/assets/dicoms directory.
+•	Localization Issues: Check that the translation.json files in the locales directory are correctly formatted and contain all necessary keys.
 
-### Advanced Configuration
+## Debugging Tips
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+•	Use the browser’s developer console to check for errors and debug issues.
+•	Ensure all dependencies are correctly installed and up-to-date by running npm install.
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are welcome! Please fork this repository and submit a pull request to contribute.
 
-### `yarn build` fails to minify
+1.	Fork the repository.
+2.	Create a new branch (git checkout -b feature/new-feature).
+3.	Make your changes and commit them (git commit -m 'Add new feature').
+4.	Push to the branch (git push origin feature/new-feature).
+5.	Create a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
