@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Routes olarak güncellendi
+import PatientList from './components/patient/PatientList';
+import DicomViewer from './components/viewer/DicomViewer';
+import LanguageSelector from './components/common/LanguageSelector';
+import './i18n';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <LanguageSelector />
+        <Routes>
+          <Route path="/" element={<PatientList />} />
+          <Route path="/viewer/:id" element={<DicomViewer />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,31 @@
+{
+  "viewer": {
+    "title": "DICOM Görüntüleyici",
+    "addRoi": "ROI Ekle"
+  },
+  "home": {
+    "title": "Hasta Listesi"
+  },
+  "patient": {
+    "name": "Hasta Adı",
+    "mrn": "MRN",
+    "studyDate": "Çalışma Tarihi",
+    "description": "Açıklama",
+    "modality": "Modalite",
+    "accession": "Erişim",
+    "instances": "Örnekler",
+    "viewDicom": "DICOM'u Görüntüle",
+    "details": "Detaylar",
+    "age": "Yaş",
+    "gender": "Cinsiyet",
+    "referringPhysician": "Gönderen Doktor",
+    "studyDescription": "Çalışma Açıklaması",
+    "institution": "Kurum",
+    "bodyPartExamined": "İncelenen Vücut Bölgesi"
+  },
+  "roiPanel": {
+    "title": "ROI Seçimleri",
+    "remove": "Sil",
+    "noSelection": "Seçim Yok"
+  }
+}

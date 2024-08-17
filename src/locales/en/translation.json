@@ -1,0 +1,31 @@
+{
+  "viewer": {
+    "title": "DICOM Viewer",
+    "addRoi": "Add ROI"
+  },
+  "home": {
+    "title": "Patient List"
+  },
+  "patient": {
+    "name": "Patient Name",
+    "mrn": "MRN",
+    "studyDate": "Study Date",
+    "description": "Description",
+    "modality": "Modality",
+    "accession": "Accession",
+    "instances": "Instances",
+    "viewDicom": "View DICOM",
+    "details": "Details",
+    "age": "Age",
+    "gender": "Gender",
+    "referringPhysician": "Referring Physician",
+    "studyDescription": "Study Description",
+    "institution": "Institution",
+    "bodyPartExamined": "Body Part Examined"
+  },
+  "roiPanel": {
+    "title": "ROI Selections",
+    "remove": "Remove",
+    "noSelection": "No Selection"
+  }
+}
